@@ -26,12 +26,14 @@
             
         }
 
-        .header {
-            background-image: url('./images/vitor\ gaia.jpg');
-            background-size: cover;
-            height: 500px;
-            background-position: 30px;
-            padding: 30px;
+        #header {
+            background-color: #303030;
+            display: flex;
+            position: fixed;
+            top: 0%;
+            width: 100%;
+            padding: 15px;
+            justify-content: space-between;
         }
 
         .header-content {
