@@ -36,14 +36,32 @@
             justify-content: space-between;
         }
 
-        .header-content {
-            max-width: 40%;
-            color: #f0f6fc;
-            margin-left: 0px;
-            background-color: aqua;
+        #header div a{
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 30px;
         }
 
-        .header-text {
-
+        #header div a:hover {
+            color: brown;
         }
+
+        #header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            margin-right: 30px;
+            margin-top: 9px;
+        }
+
+        #header nav ul li a {
+            text-decoration: none;
+        }
+
+        #header nav ul li a:hover {
+            color: brown;
+        }
+
+
+        
 
