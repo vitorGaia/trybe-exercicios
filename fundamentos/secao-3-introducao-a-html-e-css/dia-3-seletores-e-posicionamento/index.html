@@ -5,47 +5,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="./style.css">
-    
+    <script src="https://kit.fontawesome.com/dd8863f40c.js" crossorigin="anonymous"></script>
+
     <title>Meu portifólio | Vitor</title>
 </head>
 
 <body>
+    <header id="header">
+        <div>
+            <a href="#">Portifólio | Vitor Gaia</a>
+        </div>
+        <!--Meu nome completo-->
 
-    <h1 class="trybe-green" >Vitor Gaia Martins</h1>
-    <!--Meu nome completo-->
-
-    <img src="./images/vitor gaia.jpg" alt="Vitor bonitamente" class="class-picture">
-    <!--Imagem de perfil-->
-
-    <h2 class="trybe-green" ><em>Meu nome é <strong>Vitor</strong>, sou estudante de desenvolvimento web na Trybe e estou cursando Engenharia de software na Unifatecie, no futuro pretendo trabalhar com desenvolvimento de jogos, sou brasileiro e moro em Belém-PA.</em></h2>
-    <!--Descrição / perfil-->
-
-    <a href="https://www.linkedin.com/in/vitor-gaia-345129125/" target="_blank">Linkedin</a>
-    <br>
-    <a href="https://github.com/vitorGaia" target="_blank">Github</a>
-    <br>
-    <a href="https://www.instagram.com/vitor.gaia/" target="_blank">Instagram</a>
-    <br><br>
+        <nav>
+            <ul>
+                <a href="#">Sobre mim</a>
+                <a href="#">Projetos</a>
+                <a href="#">Contato</a>
+            </ul>
+        </nav>
+    </header>
     <!--Links dos meus perfis-->
 
-    <ul>
-        <a href="html" class="button" > HTML</a>
-        <a href="css" class="button" >CSS</a>
-        <a href="java" class="button" >Java</a>
-    </ul>
-    <!--Lista de habilidades-->
+    <section id="sobre-mim">
+        <div>
+            <img class="vitor-image" src="./images/vitor gaia.jpg" alt="Vitor bonitamente">
 
-    <br>
-    <p id="html">A Linguagem de Marcação de Hipertexto (HTML) é uma linguagem de computador que compõe a maior parte das páginas da internet e dos aplicativos online.</p>
-    <br>
-    <p id="css">CSS é a sigla para Cascading Style Sheets, ou seja, Folhas de Estilo em Cascatas. É uma maneira de dar estilo ao código criado por linguagens como HTML, XML ou XHTML, por exemplo. De forma prática, ela funciona como uma camada de personalização ao conteúdo visível.</p>
-    <br>
-    <p id="java">Java é uma linguagem de programação e plataforma de computação liberada pela primeira vez pela Sun Microsystems em 1995. De um início humilde, ela evoluiu para uma grande participação no mundo digital dos dias atuais, oferecendo a plataforma confiável na qual muitos serviços e aplicativos são desenvolvidos.</p>
-    <br>
+            <h1 class="titulo">Vitor Gaia Martins</h1>
+
+            <h2 class="subtitulo">Futuro desenvolvedor de software</h2>
+
+            <p class="quem-sou-eu"><em>Meu nome é <strong>Vitor</strong>, sou estudante de desenvolvimento web na
+            <strong>Trybe</strong> e estou cursando Engenharia de software na <strong>Unifatecie</strong>, no 
+            futuro pretendo trabalhar com desenvolvimento de jogos,sou brasileiro e moro em Belém-PA.</em></p>
+        </div>
+        <!--Sobre mim-->
+
+        <div id="social-media">
+            <a class="linkedin" href="https://www.linkedin.com/in/vitor-gaia-345129125/" target="_blank"> <i
+                    class="fa-brands fa-linkedin"></i> </a>
+            <a class="github" href="https://github.com/vitorGaia" target="_blank"> <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="instagram" href="https://www.instagram.com/vitor.gaia/" target="_blank"> <i
+                    class="fa-brands fa-instagram"></i> </a>
+            <a class="facebook" href="https://www.facebook.com/vitor.uchirra" target="_blank"> <i
+                    class="fa-brands fa-facebook"></i> </a>
+        </div>
+    </section>
+
+    <section>
+        <div id="skills">
+            <a class="html" href="html"><i class="fa-brands fa-html5"></i></a>
+            <a class="css" href="css"><i class="fa-brands fa-css3"></i></a>
+            <a class="java" href="java"><i class="fa-brands fa-java"></i></a>
+            <a class="java-script" href="java-script"><i class="fa-brands fa-square-js"></i></a>
+        </div>
+
+        <!--Lista de habilidades-->
+
+        <div id="skills-description">
+            <br>
+            <p id="html">A Linguagem de Marcação de Hipertexto (HTML) é uma linguagem de computador que compõe a maior
+                parte das páginas da internet e dos aplicativos online.
+            </p>
+            <br>
+            <p id="css">CSS é a sigla para Cascading Style Sheets, ou seja, Folhas de Estilo em Cascatas. É uma maneira
+                de dar estilo ao código criado por linguagens como HTML, XML ou XHTML, por exemplo. De forma prática, ela
+                funciona como uma camada de personalização ao conteúdo visível.
+            </p>
+            <br>
+            <p id="java">Java é uma linguagem de programação e plataforma de computação liberada pela primeira vez pela
+                Sun Microsystems em 1995. De um início humilde, ela evoluiu para uma grande participação no mundo digital
+                dos dias atuais, oferecendo a plataforma confiável na qual muitos serviços e aplicativos são desenvolvidos.
+            </p>
+            <br>
+            <p id="java-script">JavaScript é uma linguagem de script orientada a objetos, multiplataforma. É uma
+                linguagem pequena e leve. Dentro de um ambiente de host (por exemplo, um navegador web) o JavaScript
+                pode ser ligado aos objetos deste ambiente para prover um controle programático sobre eles.
+            </p>
+            <br>
+        </div>
+    </section>
     <!--Descrição das linguagens-->
 
+    <footer>
+
+
+
+    </footer>
 
 
 </body>
