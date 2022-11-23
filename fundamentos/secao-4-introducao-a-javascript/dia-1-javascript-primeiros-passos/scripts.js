@@ -1,7 +1,6 @@
-const myName = Vitor;
-const birthCity = Belém;
-let birthYear = 1998;
+//Usar Ctrol + S para salvar o código sempre antes de executar
 
-console.log(myName, birthCity, birthYear);
-console.log(birthCity);
-console.log(birthYear);
+let myName = "Martins";
+
+
+console.log(myName);
