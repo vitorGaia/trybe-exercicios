@@ -1,0 +1,1 @@
+exercícios array e loop for.
