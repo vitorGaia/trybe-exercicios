@@ -1,7 +1,36 @@
+/*
+//Obtenha o valor “Serviços” do array menu;
+//Procure o índice do valor “Portfólio” do array menu;
+//Adicione o valor “Contato” no final do array menu;
+
+let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
+menu.push('Contato')
+let menuServices = menu;
+
+console.log(menuServices);
+
+//Utilize o for para imprimir os elementos da lista groceryList com o console.log();
+
+let groceryList = ['Arroz', 'Feijão', 'Alface', 'Melancia'];
+
+for (let index = 0; index < groceryList.length; index += 1) {
+    console.log(groceryList[index]);
+}
+
+//Utilize o for/of para imprimir os elementos da lista names com o console.log();
+
+let names = ['João', 'Maria', 'Antônio', 'Margarida'];
+
+for (let name of names) {
+    console.log(name);
+}
+
+///////////////////
+
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let arraySom = null;
 
-/*for (let index = 0; index < numbers.length; index = index += 1) {
+for (let index = 0; index < numbers.length; index = index += 1) {
     //console.log(numbers[index]);
     arraySom = arraySom + numbers[index];
 }
@@ -67,4 +96,30 @@ console.log(arrayVoid);
 
 for (index = 0; index < arrayVoid.length; index += 1) {
     console.log(arrayVoid[index] / 2);
-}*/
+}
+*/
+
+//Ordene o array numbers em ordem crescente e imprima seus valores;
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+let finalResut = [];
+
+for (let index = 1; index < numbers.length; index += 1) {
+    
+    for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+      
+        if (numbers[index] < numbers[secondIndex]) {
+        
+            let position = numbers[index];
+        
+            numbers[index] = numbers[secondIndex];
+        
+            numbers[secondIndex] = position;
+
+            finalResut.push(position)
+        }
+    }
+}
+
+console.log(finalResut);
