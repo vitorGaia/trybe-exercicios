@@ -64,4 +64,33 @@ let speed = 90;
 const speedCar = (speed) => speed >= 120 ? `Você ultrapassou o limite de velocidade` : `Você está na velocidade permitida`;
 console.log(speedCar(speed));
 */
-// 
+// Crie uma função que ligue e desligue um motor de um carro.
+
+const statusMotor = false;
+
+const ligarDesligar = () => statusMotor == true ? `O motor está ligado` : `O motor está desligado`;
+
+console.log(ligarDesligar());
+
+// 🚀 Crie uma função que calcule a área de um círculo.
+
+const circleArea = (raio) => {
+  const pi = 3.14;
+  let area = pi * (raio ** 2);
+  return area;
+}
+
+console.log(circleArea(5));
+
+// 🚀 Crie uma função que receba uma frase como parâmetro e retorne a maior palavra da frase.
+
+const longestWord = (string) => {
+  let wordMajor = [];
+  for (const key in string.split(' ')) {
+    if (key.length > wordMajor) {
+      console.log(wordMajor);
+    }
+  }
+}
+
+console.log(longestWord('Antônio foi no banheiro e não sabemos o que aconteceu'));
