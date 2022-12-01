@@ -184,5 +184,60 @@ console.log(leitor.livrosFavoritos);
 // Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: “Julia tem <quantidade> livros favoritos”, onde “<quantidade>” é um número gerado automaticamente pelo seu código.
 
 console.log(leitor.nome + ' tem ' + leitor.livrosFavoritos.length + ' livros favoritos');
+
+// Crie uma função que receba uma string e retorne true se for um palíndromo, ou false, se não for.
+
+let word = 'crocodilo';
+let arrayWord = [];
+let arrayWordReverse = [];
+
+for (let index = 0; index < word.length; index += 1) {
+    arrayWord.push(word[index]);
+}
+
+arrayWordReverse = arrayWord.reverse();
+
+if (arrayWord === arrayWordReverse) {
+    console.log('É palíndromo!!');
+} else {
+    console.log('Não é palíndromo!!');
+}
+
+//////////
+
+function verificaPalindrome (string) {
+    let reverse = string.split('').reverse().join('');
+    if (reverse === string) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//////////
+
+function verificaPalindrome2 (word) {
+    for (index in word) {
+        if (word[index] != word[(word.length - 1) - index]) {
+            return false
+        }
+    }
+    return true;
+}
+
+console.log(verificaPalindrome2('desenvolvimento'));
 */
-// 
+// Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
+
+function indexOfMajor(array) {
+    let indexOfMajor = array[0];
+
+    for (let index in array) {
+        if (indexOfMajor < array[index]) {
+            indexOfMajor = index;
+        }
+    }
+    return indexOfMajor;
+}
+
+console.log(indexOfMajor([2, 3, 6, 7, 10, 1]));
