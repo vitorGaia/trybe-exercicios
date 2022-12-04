@@ -211,5 +211,118 @@ const catAndMouse = (mouse, cat1, cat2) => {
 }
 
 console.log(catAndMouse(20, 8, 8));
+
+// 8.Crie uma função FizzBuzz
+
+const fizzBuzz = array => {
+  let result = [];
+
+  for (let index = 0; index < array.length; index += 1) {
+    const element = array[index];
+
+    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
+      result.push('fizzBuzz')
+    } else if (array[index] % 3 === 0) {
+      result.push('fizz')
+    } else if (array[index] % 5 === 0) {
+      result.push('buzz')
+    } else if (array[index] % 3 !== 0 && array[index] % 5 !== 0) {
+      result.push('bug!')
+    } 
+  }
+
+  return result;
+}
+
+console.log(fizzBuzz([9, 25,]));
+
+// 9. Crie uma função que codifique e decodifique
+
+const encode = (string) => {
+  const arrayString = string.split('');
+  let splitString = [];
+
+  for (let index = 0; index < arrayString.length; index += 1) {
+    const element = arrayString[index];
+
+    if (element == 'a') {
+      splitString.push(1);
+    }
+    else if (element == 'e') {
+      splitString.push(2);
+    }
+    else if (element == 'i') {
+      splitString.push(3);
+    }
+    else if (element == 'o') {
+      splitString.push(4);
+    }
+    else if (element == 'u') {
+      splitString.push(5);
+    }
+    else {
+      splitString.push(element)
+    }
+  }
+  let stringSplit = splitString.join('');
+
+  return stringSplit;
+}
+
+console.log(encode('hello'));
+
+/////////// TENTAR COM SWITCH CASE DEPOIS ///////////////
+
+const decode = (string) => {
+  const arrayString = string.split('');
+  let splitString = [];
+
+  for (let index = 0; index < arrayString.length; index += 1) {
+    const element = arrayString[index];
+
+    if (element == '1') {
+      splitString.push('a');
+    }
+    else if (element == '2') {
+      splitString.push('e');
+    }
+    else if (element == '3') {
+      splitString.push('i');
+    }
+    else if (element == '4') {
+      splitString.push('o');
+    }
+    else if (element == '5') {
+      splitString.push('u');
+    }
+    else {
+      splitString.push(element)
+    }
+  }
+  let stringSplit = splitString.join('');
+
+  return stringSplit;
+}
+
+console.log(decode('h3 th2r2!'));
+
+// 10.Crie uma função de lista de tecnologias
+
+const tecList = (array, string) => {
+  const arrayOrder = array.sort();
+  let result = [];
+
+  for (let index = 0; index < arrayOrder.length; index++) {
+    const element = arrayOrder[index];
+    
+    result.push({tech: element, name: string})
+  }
+  return result
+}
+
+console.log(tecList([], 'Vitor'));
+// Obs: A função deve retornar um array vazio quando a lista de tecs estiver vazia. /não entendi se lista vazia seria um array vazio ou não passar o parâmetro ao chamar a função
 */
-// Crie uma função FizzBuzz
+// 11.Crie uma função de número de telefone
+
+const generatePhoneNumber = array => {}
