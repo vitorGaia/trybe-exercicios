@@ -322,7 +322,89 @@ const tecList = (array, string) => {
 
 console.log(tecList([], 'Vitor'));
 // Obs: A função deve retornar um array vazio quando a lista de tecs estiver vazia. /não entendi se lista vazia seria um array vazio ou não passar o parâmetro ao chamar a função
-*/
+
 // 11.Crie uma função de número de telefone
 
-const generatePhoneNumber = array => {}
+const generatePhoneNumber = array => {
+  let dDD = [];
+  let partOne = [];
+  let partTwo = [];
+
+  for (let index = 0; index < array.length; index += 1) {
+    const element = array[index];
+
+      let num = {};
+
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+      if (num[element] === undefined) {
+        num[element] = 1;
+      } else {
+        num[element] = num[element] + 1;
+      }
+    }
+
+    let contRepetido = 0;
+    let contNumero = 0;
+
+    for (const key in num) {  
+      if (contRepetido < num[key]) {
+        contRepetido = num[key];
+        contNumero = key
+      }
+    }
+
+    if (contRepetido > 3) {
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+
+    if (index > 11) {
+      return 'Array com tamanho incorreto.';
+    }
+    else if (element < 0 || element > 9) {
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+    else if (index == 0 || index == 1) {
+      dDD.push(element);
+    }
+    else if (index == 2 || index == 3 || index == 4 || index == 5 || index == 6) {
+      partOne.push(element);
+    }
+    else if (index == 7 || index == 8 || index == 9 || index == 10) {
+      partTwo.push(element);
+    }
+  }
+  let joinDDD = dDD.join('');
+  let joinPartOne = partOne.join('');
+  let joinPartTwo = partTwo.join('');
+
+  let result = `(${joinDDD}) ${joinPartOne}-${joinPartTwo}`;
+
+  return result;
+}
+
+console.log(generatePhoneNumber([4, 1, 9, 9, 8, 2, 7, 1, 5, 6, 1,]));
+*/
+// 12.Crie uma função que teste a condição de existência de um triângulo
+
+const triangleCheck = (lineA, lineB, lineC) => {
+  
+  if (lineA < (lineB + lineC) && lineA > Math.abs(lineB - lineC)) {
+    return true;
+  }
+  else if (lineB < (lineA + lineC) && lineB > Math.abs(lineC - lineA)) {
+    return true;
+  }
+  else if (lineC < (lineB + lineA) && lineA > Math.abs(lineB - lineA)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(triangleCheck(10,1,1));
+
+// 13.Crie a função boas vindas ao bar da Trybe
+
+const hydrate = string => {}
