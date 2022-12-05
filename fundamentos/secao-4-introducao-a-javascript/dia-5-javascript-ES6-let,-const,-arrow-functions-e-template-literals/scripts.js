@@ -333,7 +333,8 @@ const generatePhoneNumber = array => {
   for (let index = 0; index < array.length; index += 1) {
     const element = array[index];
 
-      let num = {};
+    // <--- essa parte resolve o problema do numero mais repetido ------------->
+    let num = {};
 
     for (let index = 0; index < array.length; index++) {
       const element = array[index];
@@ -357,6 +358,8 @@ const generatePhoneNumber = array => {
     if (contRepetido > 3) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
+
+    // <--- essa parte resolve o problema do numero mais repetido ------------->
 
     if (index > 11) {
       return 'Array com tamanho incorreto.';
@@ -384,27 +387,48 @@ const generatePhoneNumber = array => {
 }
 
 console.log(generatePhoneNumber([4, 1, 9, 9, 8, 2, 7, 1, 5, 6, 1,]));
-*/
+
 // 12.Crie uma função que teste a condição de existência de um triângulo
 
 const triangleCheck = (lineA, lineB, lineC) => {
-  
+  let isTriangle ;
+
   if (lineA < (lineB + lineC) && lineA > Math.abs(lineB - lineC)) {
-    return true;
+    isTriangle = true;
   }
-  else if (lineB < (lineA + lineC) && lineB > Math.abs(lineC - lineA)) {
-    return true;
+  else if (lineB < (lineA + lineC) && lineB > Math.abs(lineA - lineC)) {
+    isTriangle = true;
   }
-  else if (lineC < (lineB + lineA) && lineA > Math.abs(lineB - lineA)) {
-    return true;
+  else if (lineC < (lineA + lineB) && lineC > Math.abs(lineA - lineB)) {
+    isTriangle = true;
   }
   else {
-    return false;
+    isTriangle = false;
   }
+  return isTriangle;
 }
 
-console.log(triangleCheck(10,1,1));
+console.log(triangleCheck(10,14,8));
 
 // 13.Crie a função boas vindas ao bar da Trybe
 
-const hydrate = string => {}
+const hydrate = string => {
+  const reg = string.replace(/[^0-9]/g,'');
+  const numbers = parseInt(reg);
+
+  let myFunc = num => Number(num);
+  const arrayNumbers = Array.from(String(numbers), myFunc);
+
+  let totalDeCopos = 0;
+
+  for (let index = 0; index < arrayNumbers.length; index += 1) {
+    const element = arrayNumbers[index];
+    totalDeCopos += element;
+  }
+
+  return `${totalDeCopos} copos de água`;
+}
+
+
+console.log(hydrate('5 cervejas'));
+*/
