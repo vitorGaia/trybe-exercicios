@@ -148,7 +148,7 @@ console.log(footballPoints(14, 8));
 
 // 5.Crie uma função que calcula o número de repetições do maior número
 
-const higuestCount = (array) => {
+const highestCount = (array) => {
   let higherNumber = 0;
   let repetitions = 0;
   
@@ -170,7 +170,7 @@ const higuestCount = (array) => {
   return repetitions;
 }
 
-console.log(higuestCount([0,4,4,4,9,2,1,]));
+console.log(highestCount([-2, -2, -1]));
 
 // 6.Crie 3 funções para calcular as áreas de um triângulo e de um retângulo
 
@@ -197,20 +197,27 @@ console.log(calcAllAreas(10, 50, 'quadrado'));
 
 // 7.Crie uma função de caça ao rato
 
-const catAndMouse = (mouse, cat1, cat2) => {
-  catOne = mouse - cat1;
-  catTwo = mouse - cat2;
 
-  if (catOne < catTwo) {
-    return 'cat1';
-  } else if (catTwo < catOne) {
-    return 'cat2';
-  } else if (catOne == catTwo) {
-    return 'Os gatos trombam e o rato foge'
+const catAndMouse = (mouse, cat1, cat2) => {
+  const cat1Diference = Math.abs(mouse - cat1);
+  const cat2Diference = Math.abs(mouse - cat2);
+
+  if (cat2Diference > cat1Diference) {
+    return 'cat1'
   }
+  else if (cat1Diference > cat2Diference) {
+    return 'cat2'
+  }
+  else if (cat2Diference == cat1Diference) {
+    return 'os gatos trombam e o rato foge'
+  }
+  
+  return cat1Diference
 }
 
-console.log(catAndMouse(20, 8, 8));
+console.log(catAndMouse(10, 4, 22));
+
+//console.log(Math.abs(10 - 22));
 
 // 8.Crie uma função FizzBuzz
 
@@ -269,9 +276,7 @@ const encode = (string) => {
   return stringSplit;
 }
 
-console.log(encode('hello'));
-
-/////////// TENTAR COM SWITCH CASE DEPOIS ///////////////
+console.log(encode('How are you today?'));
 
 const decode = (string) => {
   const arrayString = string.split('');
@@ -355,13 +360,13 @@ const generatePhoneNumber = array => {
       }
     }
 
-    if (contRepetido > 3) {
+    if (contRepetido > 2) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
 
     // <--- essa parte resolve o problema do numero mais repetido ------------->
 
-    if (index > 11) {
+    if (array.length > 11 || array.length < 11) {
       return 'Array com tamanho incorreto.';
     }
     else if (element < 0 || element > 9) {
@@ -386,7 +391,7 @@ const generatePhoneNumber = array => {
   return result;
 }
 
-console.log(generatePhoneNumber([4, 1, 9, 9, 8, 2, 7, 1, 5, 6, 1,]));
+console.log(generatePhoneNumber([0,1,6]));
 
 // 12.Crie uma função que teste a condição de existência de um triângulo
 
@@ -409,7 +414,7 @@ const triangleCheck = (lineA, lineB, lineC) => {
 }
 
 console.log(triangleCheck(10,14,8));
-
+*/
 // 13.Crie a função boas vindas ao bar da Trybe
 
 const hydrate = string => {
@@ -426,9 +431,12 @@ const hydrate = string => {
     totalDeCopos += element;
   }
 
+  if (totalDeCopos == 1) {
+    return `${totalDeCopos} copo de água`;
+  }
+
   return `${totalDeCopos} copos de água`;
 }
 
 
-console.log(hydrate('5 cervejas'));
-*/
+console.log(hydrate('1 cerveja'));
