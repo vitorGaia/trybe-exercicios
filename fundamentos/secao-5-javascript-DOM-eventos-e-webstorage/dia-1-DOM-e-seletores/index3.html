@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="paragraphs">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="paragraphs">Segundo parágrafo!</p>
+    </header>
+    <script>
+      
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      const pageTitle = document.getElementById('page-title');
+      pageTitle.innerText = 'Interestellar';
+
+      const secondParagraph = document.getElementById('second-paragraph');
+      secondParagraph.innerText = 'Shnoop Floopers';
+
+      const subtitle = document.getElementById('subtitle');
+      subtitle.innerText = 'Bing Bing Flub Flub';
+      subtitle.style.color = 'blue';
+
+      const paragraphs = document.getElementsByClassName('paragraphs')[0];
+      paragraphs.style.fontSize = '50px';
+      paragraphs.style.color = 'green';
+
+    </script>
+  </body>
+</html>

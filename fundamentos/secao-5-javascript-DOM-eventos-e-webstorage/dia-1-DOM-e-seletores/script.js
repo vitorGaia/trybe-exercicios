@@ -19,3 +19,4 @@ for (let index = 0; index < noEmergencyTasksHeaders.length; index =+ 1) {
 
 const footer = document.getElementById('footer-container');
 footer.style.backgroundColor = 'rgb(0, 53, 51)';
+
