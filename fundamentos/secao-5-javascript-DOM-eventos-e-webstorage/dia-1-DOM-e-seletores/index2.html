@@ -44,44 +44,47 @@
     <script>
       // Seu código aqui   
 
-      const changeText = () => {
-        let paragraph = document.getElementsByTagName('p')[1];
-        paragraph.innerHTML = 'Estar ganhando mais de 3.500 e morar na praia!!';
-      };
-      changeText();
-
-      const squareColorGreen = () => {
-        let squareColor = document.getElementsByClassName('main-content')[0];
-        squareColor.style.background = 'rgb(76,164,109)';
+      //Crie e execute uma função que mude o texto na tag <p>-----</p>, para uma descrição de como você se vê daqui a 2 anos;
+      const alteraP = () => {
+        document.getElementsByTagName('p')[1].innerHTML = 'Daqui a dois anos vou estar numa empresa pica ganhando muita grana!!';
       }
-      squareColorGreen();
+      alteraP();
 
-      const squareColorCenter = () => {
-        let squareColorCenter = document.getElementsByClassName('center-content')[0];
-        squareColorCenter.style.background = 'white';
+      //Crie e execute uma função que mude a cor do quadrado amarelo para rgb(76,164,109);
+      const lateralSquareColor = () => {
+        document.getElementsByClassName("main-content")[0].style.backgroundColor = 'rgb(76,164,109)';
       }
-      squareColorCenter();
+      lateralSquareColor();
 
-      const correctText = () => {
-        let correctText = document.getElementsByTagName('h1')[0];
-        correctText.innerText = 'Desafio - JavaScript';
+      //Crie e execute uma função que mude a cor do quadrado vermelho para branco;
+      const centralSquareColor = () => {
+        document.getElementsByTagName('section')[0].style.backgroundColor = 'white';
       }
-      correctText();
+      centralSquareColor();
 
-      const modifierText = () => {
-        let modifierText = document.getElementsByTagName('p')[0];
-        modifierText.innerText = modifierText.innerText.toUpperCase();
+      //Crie e execute uma função que corrija o texto da tag <h1>;
+      const correctH1Text = () => {
+        document.getElementsByTagName('h1')[0].innerHTML = 'Desafio - JavulaneScript';
       }
-      modifierText();
+      correctH1Text();
 
-      const logContents = () => {
-        let logContents = document.getElementsByTagName('p');
-        for (let index = 0; index < logContents.length; index += 1) {
-          const element = logContents[index];
+      //Crie e execute uma função que modifique o texto da primeira tag <p> para maiúsculo;
+      const firstPText = () => {
+        const firstPText = document.getElementsByTagName('p')[0];
+        firstPText.innerText = firstPText.innerText.toLocaleUpperCase();
+      }
+      firstPText();
+
+      //Crie e execute uma função que exiba o conteúdo de todas as tags <p> no console.
+      const tagsPConsole = () => {
+        const tagsP = document.getElementsByTagName('p');
+        
+        for (let index = 0; index < tagsP.length; index++) {
+          const element = tagsP[index];
           console.log(element.innerHTML);
         }
       }
-      logContents();
+      tagsPConsole();
 
     </script>
   </body>

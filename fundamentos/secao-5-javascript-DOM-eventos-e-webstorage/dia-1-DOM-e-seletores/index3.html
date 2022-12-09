@@ -8,23 +8,31 @@
       <p id="second-paragraph" class="paragraphs">Segundo parágrafo!</p>
     </header>
     <script>
-      
-      const paragraph = document.getElementById("paragraph");
-      paragraph.style.color = "red";
 
-      const pageTitle = document.getElementById('page-title');
-      pageTitle.innerText = 'Interestellar';
+      const body = document.getElementsByTagName('body')[0];
+      body.style.backgroundColor = '#1f2631';
+      body.style.color = 'white';
 
-      const secondParagraph = document.getElementById('second-paragraph');
-      secondParagraph.innerText = 'Shnoop Floopers';
+      //Recupere o elemento que contém o título da página e faça algo com ele, por exemplo alterá-lo para o nome do seu filme favorito.
+      const pageTitle = document.getElementById("page-title");
+      pageTitle.innerHTML = 'O auto da compadecida';
 
-      const subtitle = document.getElementById('subtitle');
-      subtitle.innerText = 'Bing Bing Flub Flub';
-      subtitle.style.color = 'blue';
+      //Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo.
+      const secondParagraph = document.getElementById("second-paragraph");
+      secondParagraph.style.color = 'green';
+      secondParagraph.style.backgroundColor = 'purple';
+      secondParagraph.style.fontSize = '30px';
 
+      //Por fim, recupere o subtítulo e altere-o também.
+      const subtitle = document.getElementsByTagName('h4')[0];
+      subtitle.style.color = 'red';
+      //Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName.s
+
+      //Recupere os seus parágrafos via código JavaScript, usando a função e altere algum estilo do primeiro deles;
       const paragraphs = document.getElementsByClassName('paragraphs')[0];
-      paragraphs.style.fontSize = '50px';
-      paragraphs.style.color = 'green';
+      paragraphs.style.color = 'blue';
+
+
 
     </script>
   </body>
