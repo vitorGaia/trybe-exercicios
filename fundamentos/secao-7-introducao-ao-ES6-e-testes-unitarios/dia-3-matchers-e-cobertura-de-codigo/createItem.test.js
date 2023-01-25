@@ -1,4 +1,4 @@
-const createItem = require('./createItem');
+/*const createItem = require('./createItem');
 
 describe('a função createItem', () => {
   it('cria um item válido', () => {
@@ -28,4 +28,16 @@ describe('a função createItem', () => {
   it('Lança um erro se o preço é zero', () => {
     expect(() => createItem('banana', 'kg', 0.00)).toThrow('O preço do item deve ser maior que zero');
   });
+});*/
+
+const multply = require('./createItem');
+
+describe('A função multiplica dois numeros', () => {
+  it('multiplica os números', () => {
+    expect(multply(2, 3)).toEqual(6);
+  })
+
+  /*it('não recebe parametros', () => {
+    expect(() => {multply()}).toEqual();
+  })*/
 });

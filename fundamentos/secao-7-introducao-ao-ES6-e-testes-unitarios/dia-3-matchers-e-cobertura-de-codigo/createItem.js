@@ -16,3 +16,9 @@ const createItem = (name, unit, price, quantity) => {
   };
 }
 module.exports = createItem;
+
+const multply = (a, b) => a * b;
+
+
+
+module.exports = multply;
