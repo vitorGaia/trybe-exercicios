@@ -99,7 +99,10 @@ const estudantes = [
 
 const topSubject = () => {
   estudantes.map((estudante) => {
-    console.log(estudante);
+    const melhorMateria = estudante.materias.reduce((acumulador, numero) => {
+      // console.log(acumulador);
+      console.log(numero);
+    }, 0)
   })
 }
 
