@@ -31,7 +31,11 @@ const student2 = {
   age: 20,
 }*/
 
-const getLastName = (student) => student.lastName !== undefined ? student.lastName : 'lastName não preenchido'
+// const getLastName = (student) => student.lastName !== undefined ? student.lastName : 'lastName não preenchido'
+const getLastName = (objStudent) => {
+  const { lastName = `lastName não preenchido` } = objStudent;
+  return lastName;
+}
 // console.log(getLastName(student1));
 // console.log(getLastName(student2));
 
