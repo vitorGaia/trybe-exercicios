@@ -1,0 +1,23 @@
+{
+  "name": "dia-1-introducao-ao-front-e-ja-assincrono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "course.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --open",
+    "lint": "eslint ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-trybe-frontend": "^1.7.0",
+    "nanoid": "^4.0.1",
+    "vite": "^4.1.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}
