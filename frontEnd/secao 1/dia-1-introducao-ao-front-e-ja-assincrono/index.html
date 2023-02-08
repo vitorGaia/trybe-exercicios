@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,4 +16,45 @@
 
   <script src="./src/main.js" type="module"></script>
 </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Validador de Campos</title>
+</head>
+
+<body>
+  <main>
+    <div>
+      <h1>Validador de campos</h1>
+
+      <form action="" method="get">
+
+        <div id="form-container">
+          <input type="text" placeholder="Insira aqui o valor" id="value">
+          <select name="" id="">
+            <option value="cpf">CPF</option>
+            <option value="hexColor">Cor Hexadecimal</option>
+            <option value="email">email</option>
+            <option value="uuid">UUID v4</option>
+            <option value="url">url</option>
+          </select>
+          <button type="submit" id="btn">Validar</button>
+          <h3 id="awnser">...</h3>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <script src="./src/main.js"></script>
+</body>
+
 </html>
