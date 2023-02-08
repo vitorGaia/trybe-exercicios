@@ -1,60 +1,35 @@
-<!--
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Senhas Seguras</title>
-</head>
-<body>
-  <main>
-    <h1>🔒 Gerador de Senhas Seguras</h1>
-    <button>Gerar Senha Segura</button>
-    <h2>...</h2>
-  </main>
-
-  <script src="./src/main.js" type="module"></script>
-</body>
-</html>
--->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/style.css">
   <title>Validador de Campos</title>
+  <script type="module" src="./src/main.js" defer></script>
 </head>
 
 <body>
   <main>
     <div>
-      <h1>Validador de campos</h1>
-
       <form action="" method="get">
 
         <div id="form-container">
-          <input type="text" placeholder="Insira aqui o valor" id="value">
-          <select name="" id="">
+          <h1>Validador de campos</h1>
+          <input type="text" placeholder="Insira aqui o valor" id="input-text">
+          <select name="" id="select">
             <option value="cpf">CPF</option>
             <option value="hexColor">Cor Hexadecimal</option>
             <option value="email">email</option>
             <option value="uuid">UUID v4</option>
             <option value="url">url</option>
           </select>
-          <button type="submit" id="btn">Validar</button>
-          <h3 id="awnser">...</h3>
+          <button type="submit" id="submit-btn">Validar</button>
+          <p id="text-preview">...</p>
         </div>
 
       </form>
     </div>
   </main>
-
-  <script src="./src/main.js"></script>
 </body>
 
 </html>
