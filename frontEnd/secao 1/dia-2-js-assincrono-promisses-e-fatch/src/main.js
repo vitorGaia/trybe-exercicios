@@ -35,13 +35,12 @@ const MAX_HEROES = 1000;
 const randomNumber = () => Math.floor(Math.random() * MAX_HEROES);
 const randomId = randomNumber();
 
-const fetchTest = fetch(BASE_URL)
+const fetchTest = fetch('https://superheroapi.com/api.php/2407473869401059/27')
 .then((response) => response.json())
-.then((data) => data);
+.then((data) => console.log(data));
 
-//console.log(btn);
 
-const eventBtn = () => btn.addEventListener('click', (event) => {
+/* const eventBtn = () => btn.addEventListener('click', (event) => {
   event.preventDefault()
 
   fetch(`${BASE_URL}/${randomId}/image`)
@@ -58,7 +57,7 @@ const eventBtn = () => btn.addEventListener('click', (event) => {
   .catch((error) => console.log('Erro ao fazer requisição', error.message));
 })
 
-eventBtn();
+eventBtn(); */
 
 // tentando fazer o exercício com outra API pois a do course bugou
 /* const img = document.getElementById('image');
