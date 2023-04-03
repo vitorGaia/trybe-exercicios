@@ -3,44 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <title>App Trybe</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
     <style>
       body {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-      }
-
-      #container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      button {
-        height: 50px;
-        width: 200px;
+        color: white;
+        background-color: #333;
+        font-family: sans-serif;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-
-    <div id="container">
-
-      <p>Color: <span id="value">white</span></p>
-
-      <button id="previous">Previous color</button>
-
-      <button id="next">Next color</button>
-
-      <button id="random">Random color</button>
-
+    <div class="container">
+      <h1>Minha Aplicação</h1>
+      <p>Status: Você está <span id="status">Offline</span></p>
+      <button id="toggle-theme">Light Mode</button>
+      <button id="toggle-status">Ficar Online</button>
     </div>
+    <script>
 
-    <script src="./index.js" type="module"></script>
-    
+      const INITIAL_STATE = {
+        status: 'offline',
+        theme: 'dark',
+      };
+      const reducer = (state = INITIAL_STATE, action) => {
+        switch (action.type) {
+          case 'THEME':
+            return {
+              theme: state.theme === 'dark' ? 'light' : 'dark',
+              status: state.status,
+            }
+          case 'STATUS':
+            return {
+              theme: state.theme,
+              status: state.status === 'offline' ? 'online' : 'offline',
+            }
+          default:
+            return state;
+        }
+      }
+
+      const store = Redux.createStore(reducer);
+
+      const themeButton = document.getElementById('toggle-theme');
+      const statusButton = document.getElementById('toggle-status');
+
+      themeButton.addEventListener('click', () => {
+        store.dispatch({ type: 'THEME' })
+      });
+
+      statusButton.addEventListener('click', () => {
+        store.dispatch({ type: 'STATUS' })
+      });
+
+      store.subscribe(() => {
+        const { theme, status } = store.getState();
+        const body = document.getElementsByTagName('body')[0];
+        const spanStatus = document.getElementById('status');
+
+        if (theme === 'light') {
+          themeButton.innerHTML = 'Dark Mode';
+          body.style.backgroundColor = 'white';
+          body.style.color = 'black';
+        }
+        else if (theme === 'dark') {
+          themeButton.innerHTML = 'Light Mode';
+          body.style.backgroundColor = '#333';
+          body.style.color = 'white';
+        }
+
+        if (status === 'online') {
+          statusButton.innerHTML = 'Ficar Offline';
+          spanStatus.innerHTML = 'Status: Você está Online';
+        }
+        else if (status === 'offline') {
+          statusButton.innerHTML = 'Ficar Online';
+          spanStatus.innerHTML = 'Status: Você está Offline';
+        }
+      })
+    </script>
   </body>
 </html>
