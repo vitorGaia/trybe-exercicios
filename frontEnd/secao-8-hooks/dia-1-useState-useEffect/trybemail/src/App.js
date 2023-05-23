@@ -1,25 +1,57 @@
-import React, { useState } from 'react';
-import Email from './Email';
-import emails from './data';
+import React, { useEffect, useState } from 'react';
+import { List, READ, UNREAD } from './components/List';
+import data from './data';
+import Controls from './components/Controls';
 import './App.css';
 
 function App() {
-  const [ savedEmails, setEmails ] = useState(emails);
+  const [messages, setMessages] = useState(data);
+
+  const setMessageStatus = (messageId, newStatus) => {
+    const updatedMessages = messages.map((message) => {
+      if (message.id === messageId) {
+        return { ...message, status: newStatus }
+      }
+      return message;
+    })
+
+    setMessages(updatedMessages);
+  }
+
+  const markAllAsRead = () => {
+    const allAsRead = messages.map((m) => ({ ...m, status: READ }));
+    setMessages(allAsRead);
+  }
+
+  const markAllAsUnread = () => {
+    const allAsRead = messages.map((m) => ({ ...m, status: UNREAD }));
+    setMessages(allAsRead);
+  };
+
+  useEffect(() => {
+    const isAllmessagesRead = messages.every((m) => m.status === READ);
+
+    if (isAllmessagesRead) {
+      alert('Lau!');
+    }
+  }, [messages]);
 
   return (
-    <main>
-      <h1>TrybeMail</h1>
-      <div>
-        <button>Marcar todas como lidas</button>
-        <button>Marcar todas como não lidas</button>
-        <div>
-          { savedEmails.map((email, index) => <Email
-          email={ email }
-          key={ index }
-          />) }
-        </div>
-      </div>
-    </main>
+    <div className="App">
+      <header>
+        <h1>TrybeEmail</h1>
+      </header>
+
+      <Controls
+        markAllAsRead={ markAllAsRead }
+        markAllAsUnread={ markAllAsUnread }
+      />
+
+      <List
+        messages={ messages }
+        setMessageStatus={ setMessageStatus }
+      />
+    </div>
   );
 }
 

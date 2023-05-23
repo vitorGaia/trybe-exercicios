@@ -1,19 +1,19 @@
-const emails = [
+const messagesList = [
   {
     id: 1,
-    title: "Estudar",
-    status: 0
+    title: 'Olá! Tenho uma vaga que bate com o seu perfil, podemos marcar uma conversa?',
+    status: 0,
   },
   {
     id: 2,
-    title: "Exercitar",
-    status: 0
+    title: 'Parabéns! Você avançou no processo da vaga Pessoa Desenvolvedora',
+    status: 0,
   },
   {
     id: 3,
-    title: "Treinar mira no Valorant",
-    status: 0
+    title: 'RE: Entrevista marcada',
+    status: 0,
   },
 ];
 
-export default emails;
+export default messagesList;
