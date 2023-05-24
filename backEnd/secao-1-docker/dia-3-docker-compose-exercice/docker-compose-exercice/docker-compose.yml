@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+
+  frontend:
+    build: ./home/vitor/Área de Trabalho/Trybe Course/Repositórios/trybe-exercicios/backEnd/secao-1-docker/dia-3-docker-compose-exercice/docker-compose-exercice
+    ports:
+      - 8080:80
