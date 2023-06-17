@@ -4,6 +4,7 @@ const chai = require('chai');
 
 // o chai-http vai criar seu próprio listen(), escolher uma porta automaticamente, fazer a requisição ao endpoint e, por último, retornar o resultado dessa requisição.
 const chaiHttp = require('chai-http');
+const { it } = require('mocha');
 
 const sinon = require('sinon');
 
@@ -140,5 +141,69 @@ describe('Testando a API Cacau Trybe', function () {
         expect(response.status).to.be.equal(200);
         expect(response.body).to.deep.equal({ totalChocolates: 4 });
     })
+  });
+
+  describe('Usando o método GET em /chocolates/seach', function () {
+    it('Retorna chocolates que contém "Mo" no nome', async function () {
+      const response = await chai
+        .request(app)
+        .get('/chocolates/search?name=Mo');
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.be.equal([
+        {
+          id: 3,
+          name: 'Mon Chéri',
+          brandId: 2,
+        },
+        {
+          id: 4,
+          name: 'Mounds',
+          brandId: 3,
+        },
+      ]);
+
+      it('Retorna um array vazio se não encontrar nada', async function () {
+        const response = await chai
+        .request(app)
+        .get('chocolates/search?name=zzz');
+
+        expect(response.status).to.be.equal(404);
+        expect(response.body).to.be.equal([]);
+      })
+    })
+  });
+
+  describe('Usando o método PUT em /chocolates/:id', function () {
+    it('Atualiza um chocolate existente', async function () {
+      const response = await chai
+        .request(app)
+        .put('/chocolates/1')
+        .send({
+          name: 'Mint Pretty Good',
+          brandId: 2,
+        });
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deeep.equal({
+        id: 1,
+        name: 'Mint Pretty Good',
+        brandId: 2,
+      });
+    })
+
+    it('Se o chocolate não existe, gera um erro', async function () {
+      const response = await chai
+        .request(app)
+        .put('/chocolates/555').send({
+        name: 'Mint Pretty Good',
+        brandId: 2,
+        });
+      
+      expect(response.status).to.be.equal(404);
+      expect(response.body).to.deep.equal({
+        message: 'chocolate not found',
+      });
+    });
   });
 });
