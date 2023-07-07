@@ -1,7 +1,15 @@
 const BookService = require('../services/book.service');
 
-const getAll = async (_req, res) => {
-  const books = await BookService.getAll();
+const getAll = async (req, res) => {
+  const { author } = req.query;
+  let books;
+
+  if (author) {
+    books = await BookService.getByAuthor(author);
+  } else {
+    books = await BookService.getAll();
+  }
+
   res.status(200).json(books);
 };
 
