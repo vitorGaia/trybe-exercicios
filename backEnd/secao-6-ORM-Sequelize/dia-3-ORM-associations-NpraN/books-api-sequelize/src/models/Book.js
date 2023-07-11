@@ -4,14 +4,14 @@
  * @param {import('sequelize').DataTypes} DataTypes 
  */
 
-const UserSchema = (sequelize, DataTypes) => {
-  const User = sequelize.define(
-    'User',
+const BookSchema = (sequelize, DataTypes) => {
+  const Book = sequelize.define(
+    'Book',
     {
       id: { type: DataTypes.INTEGER, primaryKey: true },
-      firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
-      age: DataTypes.INTEGER,
+      name: DataTypes.STRING,
+      releaseYear: DataTypes.INTEGER,
+      totalPages: DataTypes.INTEGER,
     },
     {
       timestamps: false,
@@ -19,7 +19,7 @@ const UserSchema = (sequelize, DataTypes) => {
     },
   );
 
-  return User;
+  return Book;
 };
 
-module.exports = UserSchema;
+module.exports = BookSchema;
