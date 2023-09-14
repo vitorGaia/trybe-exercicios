@@ -6,4 +6,14 @@ somar valores, {valor} é um valor inválido”. Ao final, você deve imprimir a
 soma dos valores válidos.
 '''
 
-valores = input('Digite os valores a serem somados, separados por " "! ')
+nums = input('Digite os valores a serem somados, separados por espaço: ')
+nums_arr = nums.split(' ')
+sum = 0
+
+for num in nums_arr:
+    if not num.isdigit():
+        print(f'Erro ao somar valores, {num} não é um dígito.')
+    else:
+        sum += int(num)
+
+print(f'A soma dos valores válidos é: {sum}')
