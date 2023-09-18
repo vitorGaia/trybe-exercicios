@@ -29,18 +29,18 @@ print(f"Elemento encontrado na posição: {result}")
 '''
 # --- Exemplos de complexidade de loop ---
 def calculations(n):
-    # Linear
+    # Linear --> 0(n)
     number1 = 0
     for n1 in range(n):
         number1 += n1
 
-    # Quadrático
+    # Quadrático --> 0(n²)
     number2 = 0
     for n1 in range(n):
         for n2 in range(n):
             number2 += n1 + n2
 
-    # Cúbico
+    # Cúbico --> 0(n³)
     number3 = 0
     for n1 in range(n):
         for n2 in range(n):
@@ -52,4 +52,9 @@ def calculations(n):
 
 n1, n2, n3 = calculations(100)
 print(f'{n1}, {n2}, {n3}')
+
+# Constante --> O(1)
+# Logarítmico --> O(log n)
+# Exponencial --> O(2ⁿ)
+# Fatorial --> O(n!)
 '''
