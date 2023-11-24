@@ -76,8 +76,12 @@ WSGI_APPLICATION = "event_manager.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "event_manager_database",
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'event_manager_database',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
